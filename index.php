@@ -1,23 +1,49 @@
+<?php 
+    if (!empty($_GET['location'])) {
+        $maps_url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' 
+        .urlencode( $_GET['location']);
+        //sample: https://maps.googleapis.com/maps/api/geocode/json?address=disneyland,ca
+        
+        //this returns json
+        $maps_json = file_get_contents($maps_url);
+        //convert to php array
+        $maps_array = json_decode($maps_json, true );
+
+
+
+
+    }
+
+
+
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>geogram</title>
+    <title>Geogram</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="script.js"></script>
 </head>
 <body>
-<form action="" method="get">
-    <input type="text" name="location"/>
-    <button type="submit">Submit</button>
+<form action="" method="get"> <!--leave action method blank to submit to the address of current page  -->
+    <input type="text" name="location"/>   
+    <button type="submit">submit</button>
+
+
 </form>
 <br/>
 <div id="results" >
     <?php
-    if () {
-        
+    /*if () {        
         }
-    }
+    }*/
     ?>
 </div>
 </body>
