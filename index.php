@@ -9,18 +9,15 @@
         //convert to php array
         $maps_array = json_decode($maps_json, true );
 
+        $lat = $maps_array['results'][0]['geometry']['location']['lat'];
+        $lng = $maps_array['results'][0]['geometry']['location']['lng'];
 
-
+        $instagram_url = 'https://api.instagram.com/media/search?lat=' . $lat . '&lang=' . $lng . 
+                        '&client_id= aaaasdddfasdfdasff, myinstagram api key';
 
     }
 
-
-
-
-
 ?>
-
-
 
 
 <!DOCTYPE html>
